@@ -20,7 +20,7 @@
       <div class="m-55" style="display: flex;flex-direction: row;justify-content:space-around; align-items: center;">
           <button type="button" class="custom-btn mr-15 border-solid1" onclick="window.location.href='iloveyoupage.html'"> Back</button>
           <button type="button" class="custom-btn" id="playmusic" onclick="playmusic()">Play Music</button>    
-          <audio id="myAudio" autoplay>
+          <audio id="myAudio"  autoplay>
             <source src="audio/palagi-cut.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -87,15 +87,16 @@
 </div>
 
 <script>
-window.onload=function(){
-  setTimeout(
-  document.getElementById("playmusic").click(),2000)
-};
-
-function playmusic(){
-  var audio = document.getElementById('myAudio');
-  audio.play();
-}
+ window.onload=function(){
+        setTimeout(
+        document.getElementById("playmusic").click(),1000)
+    };
+    
+    function playmusic(){
+        var audio = document.getElementById('myAudio');
+        audio.play();
+    }
+    
 function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
