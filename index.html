@@ -12,6 +12,10 @@
     </head>
 
 <body>
+    <audio id="myAudio"  autoplay loop>
+        <source src="audio/palagi-cut.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
     <div id="heartContainer">
         <canvas id="canvas" width="2500" height="1000"></canvas>
         <div id="message"><h3>I am so blessed to have you in my life</h3></div>
@@ -21,15 +25,8 @@
           <button type="button" class="custom-btn" id="playmusic" onclick="playmusic()">Play Music</button>
         </div>
 
-        <audio id="myAudio"  autoplay>
-            <source src="audio/palagi-cut.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
     </div>
 </body>
-<script src="js/script.js"></script>
-<script src="js/cursorheart.js"></script>
-
 
 <script>
     
@@ -84,4 +81,8 @@ function playmusic(){
     audio.play();
 }
 </script>
+
+<script src="js/script.js"></script>
+<script src="js/cursorheart.js"></script>
+
 </html>
