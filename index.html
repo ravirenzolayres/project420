@@ -50,24 +50,33 @@ function change()
     { width: cWidth, height: cHeight } = hc.getBoundingClientRect(),
     { width: bWidth, height: bHeight } = b.getBoundingClientRect()
 
-    var i = Math.floor(Math.random() * (cWidth - bWidth))+1;
-    var j = Math.floor(Math.random()* (cHeight - bHeight))+1;
-    b.style.left = i+"px";
-    b.style.top = j+"px";
+    // var i = Math.floor(Math.random() * (cWidth - bWidth))+1;
+    // var j = Math.floor(Math.random()* (cHeight - bHeight))+1;
+    
+    // console.log(i);
+    // console.log(j);
 
     count++;
     console.log(count);
     if (count == 1){
         b.innerHTML = "Sorry, Click mo po ulit."
+        b.style.left = "149px";
+        b.style.top = "367px";
     }
 
     if (count == 2){
         b.innerHTML = "HAHAHA, Last na boss SORRY :P <3."
+        b.style.left = "527px";
+        b.style.top = "546px";
     }
 
     if (count>=3){
         b.innerHTML = "HAPPY 1st MONTHSARY, Looking forward to a future with YOU.<3";
-        setTimeout(redirectPage, 5000);
+        b.style.left = "775px";
+        b.style.top = "486px";
+        b.setAttribute("disabled", "");
+
+        setTimeout(redirectPage, 3000);
     }
 
 }
