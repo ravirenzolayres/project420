@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 420</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script>
+            // alert("Hello Bossing ko! <3, I want to greet you a Happy 1st Month to us as partners")
+            // alert("Since this is our 1st Month. I want to make it memorable for you. Here's something simple i made for you")
+            // alert("Hope you like it, I love youu.<3<3<3")
+
+        </script>
+    </head>
+
+<body>
+    <div id="heartContainer">
+        <canvas id="canvas" width="2500" height="1000"></canvas>
+        <div id="message"><h3>I am so blessed to have you in my life</h3></div>
+        <div class="button-container">
+            <button class="custom-btn" id="clickButton">Click me</button>
+        </div>
+    </div>
+</body>
+<script src="js/script.js"></script>
+<script src="js/cursorheart.js"></script>
+
+
+<script>
+    var hc = document.querySelector("#heartContainer");
+    var b = document.querySelector("button");
+
+b.addEventListener("click",change);
+var count = 0;
+function change()
+{
+    const
+    { width: cWidth, height: cHeight } = hc.getBoundingClientRect(),
+    { width: bWidth, height: bHeight } = b.getBoundingClientRect()
+
+    var i = Math.floor(Math.random() * (cWidth - bWidth))+1;
+    var j = Math.floor(Math.random()* (cHeight - bHeight))+1;
+    b.style.left = i+"px";
+    b.style.top = j+"px";
+
+    count++;
+    console.log(count);
+    if (count == 1){
+        b.innerHTML = "Sorry, Click mo po ulit."
+    }
+
+    if (count == 2){
+        b.innerHTML = "HAHAHA, Last na boss SORRY :P <3."
+    }
+
+    if (count>=3){
+        b.innerHTML = "HAPPY 1st MONTHSARY, Looking forward to a future with YOU.<3";
+        setTimeout(redirectPage, 5000);
+    }
+
+}
+function redirectPage(){
+    window.location.href='iloveyoupage.html';
+}
+
+</script>
+</html>
