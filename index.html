@@ -12,10 +12,6 @@
     </head>
 
 <body>
-    <audio id="myAudio"  autoplay loop>
-        <source src="audio/palagi-cut.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
     <div id="heartContainer">
         <canvas id="canvas" width="2500" height="1000"></canvas>
         <div id="message"><h3>I am so blessed to have you in my life</h3></div>
@@ -23,10 +19,29 @@
             <button class="custom-btn" id="clickButton">Click me</button>
             
           <button type="button" class="custom-btn" id="playmusic" onclick="playmusic()">Play Music</button>
+            
+          <audio id="myAudio"  autoplay loop>
+            <source src="audio/youllbesafehere-cut.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
         </div>
 
     </div>
 </body>
+<script>
+
+    window.onload=function(){
+        setTimeout(
+        document.getElementById("playmusic").click(),1000)
+    };
+    
+    function playmusic(){
+        var audio = document.getElementById('myAudio');
+        audio.play();
+    }
+    
+    
+</script>
 
 <script>
     
@@ -36,13 +51,6 @@
 b.addEventListener("click",change);
 var count = 0;
 
-document.getElementById("playmusic").click();
-
-
-function playmusic(){
-    var audio = document.getElementById('myAudio');
-    audio.play();
-}
 
 function change()
 {
@@ -71,7 +79,7 @@ function change()
     }
 
     if (count>=3){
-        b.innerHTML = "HAPPY 1st MONTHSARY, Looking forward to a future with YOU.<3";
+        b.innerHTML = "HAPPY 1st MONTHSARY, Looking forward a future with YOU.<3";
         b.style.left = "775px";
         b.style.top = "486px";
         b.setAttribute("disabled", "");
