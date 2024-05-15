@@ -67,24 +67,24 @@ function change()
     count++;
     console.log(count);
     if (count == 1){
-        b.innerHTML = "Sorry, Click mo po ulit."
+        b.innerHTML = "Sorry, Click ME again."
         b.style.left = "149px";
         b.style.top = "367px";
     }
 
     if (count == 2){
-        b.innerHTML = "HAHAHA, Last na boss SORRY :P <3."
+        b.innerHTML = "HAHAHA, Last na boss Click ME :P <3."
         b.style.left = "527px";
         b.style.top = "546px";
     }
 
     if (count>=3){
-        b.innerHTML = "HAPPY 1st MONTHSARY, Looking forward a future with YOU.<3";
+        document.getElementById("clickButton").disabled = true;
+        b.innerHTML = "HAPPY 1st MONTHSARY, Looking to a future with YOU.<3";
         b.style.left = "775px";
         b.style.top = "486px";
-        b.setAttribute("disabled", "");
-
-        setTimeout(redirectPage, 2000);
+        
+        setTimeout(redirectPage, 1000);
     }
 
 }
