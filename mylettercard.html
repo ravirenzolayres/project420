@@ -95,7 +95,41 @@
 
         }
 
+        video {
+            display: block;
+            }
 
+        video,
+        button {
+        width: 100%;
+        }
+
+        .custom-btn-letter {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        width:180px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #000000;
+        background-color: #f8f8f8;
+        border: 1px solid #f8f8f8;
+        border-radius: 1.25rem;
+        cursor: pointer;
+        text-decoration: none; 
+        transition:  0.3s  ease-in-out;transition:  0.3s  ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+        }
+
+        .custom-btn-letter:hover {
+            background-color: #e00707;
+            color:white;
+            border-color: #e00707;
+            transform: scale(1.2); 
+            transition:  0.3s  ease-in-out;
+            box-shadow: 0 4px 8px   rgba(0, 0, 0, 0.2);
+        }
     </style>    
 </head>
 
@@ -120,25 +154,33 @@
                     <br>
                     
                     I'm not good at writing letters but here i am writing one for you.<br>
-                    
                     <br>
-                    First, I would like to thank the Lord for your life and allowing us to meet.
+
+                    Meeting you is my favorite accident, the relationship that i never expected to happen but still happen and made me the happiest ever.
+                    <br><br>
+                    You're not just my girl.<br>
+                    You're my home,You're my rest,<br>
+                    You're my heart and my safe place.<br>
+                    
+                    <!-- First, I would like to thank the Lord for your life and allowing us to meet.
                     Second, due to your past experiences. It was hard for you to give your trust and love someone once again.
                     I am thankful to you, for choosing me to be your partner and I will not take this opportunity for granted.
                     Finally, I'm thankful for your understanding,support and love on me. I'm always here to support,care and love you.
-
-                    <br><br>
-                    1 month down, forever to go.I created this web page because its our 1st Month. I wanted something unique and memorable one.
-                    Hope you like this little gift especially created only for you my love. <br>
-                    
+                     -->
                     <br>
+                    1 month down, forever to go.<br>Hope you like my little gift for you my love.<br>
+                    
                     I love you, palagi! Happy 1st Month Mahaal kooo!
-
-                    <button style="margin-top:10px" type="button" class="custom-btn" onclick="window.location.href='flower.html'">CLICK ME</button>
-                      
+                     
+                    <button style="margin-top:25px" type="button" class="custom-btn-letter" onclick="window.location.href='flower.html'">CLICK ME FOR FLOWER</button>
+                    
+                    <button style="margin-top:15px" type="button" class="custom-btn-letter pip">CLICK ME FOR VIDEO</button>
                 </p>
             </div>
-
+            <video style="visibility:hidden;">
+                <source src="vid/us.mov">
+              Your browser does not support the video tag.
+            </video>
             <audio id="myAudio"  autoplay loop>
                 <source src="audio/palagi-cut.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
@@ -156,6 +198,38 @@
         var audio = document.getElementById('myAudio');
         audio.play();
     }
+    function stopMusic(){
+        var audio = document.getElementById('myAudio');
+        audio.pause();
+    }
+
+const video = document.querySelector("video");
+const pip = document.querySelector(".pip");
+
+// video.addEventListener("enterpictureinpicture", e => {
+//  pip.innerText = "Leave picture-in-picture mode";
+// });
+
+pip.addEventListener("click", async e => {
+ pip.disabled = true;
+ try {
+  if (video !== document.pictureInPictureElement) {
+   await video.requestPictureInPicture();
+   stopMusic()
+//    var audio = document.getElementById('myAudio');
+//     audio.stop();
+
+   return video.play();
+  }
+  playmusic();
+  await document.exitPictureInPicture();
+ } catch (err) {
+  error.innerText = "Error, try again!";
+ } finally {
+  pip.disabled = false;
+ }
+});
+
 </script>
 
 <script src="js/cursorheart.js"></script>
